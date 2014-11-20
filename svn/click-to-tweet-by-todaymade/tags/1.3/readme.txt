@@ -50,6 +50,9 @@ Find out more here: [http://coschedule.com/click-to-tweet](http://coschedule.com
 
 == Changelog ==
 
+= 1.3 =
+* Removed powered by link
+
 = 1.2 =
 * Fixed support for php short tags
 
