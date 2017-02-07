@@ -249,9 +249,9 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		 */
 		public function replace_tags($content) {
 			if (!is_feed()) {
-				$content = preg_replace_callback("/\[tweet \"(.*?)\"]/i", array($this, 'tweet'), $content);
+				$content = preg_replace_callback("/\[tweet \"[^\"]*\"]/i", array($this, 'tweet'), $content);
 			} else {
-				$content = preg_replace_callback("/\[tweet \"(.*?)\"]/i", array($this, 'tweet_feed'), $content);
+				$content = preg_replace_callback("/\[tweet \"[^\"]*\"]/i", array($this, 'tweet_feed'), $content);
 			}
 			return $content;
 		}
