@@ -2,10 +2,10 @@
 /*
 Plugin Name: Click To Tweet
 Description: Add click to tweet boxes to your WordPress posts, easily.
-Version: 1.3
-Author: Todaymade
-Author URI: http://coschedule.com/
-Plugin URI: http://coschedule.com/click-to-tweet
+Version: 1.4
+Author: CoSchedule
+Author URI: https://coschedule.com/
+Plugin URI: https://coschedule.com/click-to-tweet
 */
 
 // Check for existing class

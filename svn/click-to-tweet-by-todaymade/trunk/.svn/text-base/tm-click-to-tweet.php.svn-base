@@ -2,10 +2,10 @@
 /*
 Plugin Name: Click To Tweet
 Description: Add click to tweet boxes to your WordPress posts, easily.
-Version: 1.3
-Author: Todaymade
-Author URI: http://coschedule.com/
-Plugin URI: http://coschedule.com/click-to-tweet
+Version: 1.4
+Author: CoSchedule
+Author URI: https://coschedule.com/
+Plugin URI: https://coschedule.com/click-to-tweet
 */
 
 // Check for existing class
@@ -201,19 +201,31 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		}
 
 		/**
-		 * Shorten text lenth to 100 characters.
+		 * Shorten text length to 257 with via handle text included.
 		 */
-		public function shorten($input, $length, $ellipses = true, $strip_html = true) {
+		public function shorten($input, $handle, $ellipses = true, $strip_html = true) {
+
+            $max_tweet_length = 280;
+            $default_url_count = 23;
+            $max_tweet_length_with_url = $max_tweet_length - $default_url_count;
+            $limit = $max_tweet_length_with_url;
+
+            if (!empty($handle)) {
+                $via_handle_length = strlen(" via @".$handle);
+                $limit = $limit - $via_handle_length;
+            }
 		    if ($strip_html) {
 		        $input = strip_tags($input);
 		    }
-		    if (strlen($input) <= $length) {
+		    if (strlen($input) <= $limit) {
 		        return $input;
 		    }
-		    $last_space = strrpos(substr($input, 0, $length), ' ');
+            $ellipses = '...';
+
+            $last_space = strrpos(substr($input, 0, $limit - strlen($ellipses)), ' ');
 		    $trimmed_text = substr($input, 0, $last_space);
 		    if ($ellipses) {
-		        $trimmed_text .= '...';
+		        $trimmed_text .= $ellipses;
 		    }
 		    return $trimmed_text;
 		}
@@ -227,7 +239,7 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		        $handle_code = "&via=".$handle."&related=".$handle;
 		    }
 		    $text = $matches[1];
-		    $short = $this->shorten($text, 100);
+		    $short = $this->shorten($text, $handle);
 		    return "<div class='tm-tweet-clear'></div><div class='tm-click-to-tweet'><div class='tm-ctt-text'><a href='https://twitter.com/share?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank'>".$short."</a></div><a href='https://twitter.com/share?text=".urlencode($short)."".$handle_code."&url=".get_permalink()."' target='_blank' class='tm-ctt-btn'>Click To Tweet</a><div class='tm-ctt-tip'></div></div>";
 		}
 
@@ -240,7 +252,7 @@ if ( ! class_exists( 'tm_clicktotweet' ) ) {
 		        $handle_code = "&via=".$handle."&related=".$handle;
 		    }
 		    $text = $matches[1];
-		    $short = $this->shorten($text, 100);
+		    $short = $this->shorten($text, $handle);
 		    return "<hr /><p><em>".$short."</em><br /><a href='https://twitter.com/share?text=".urlencode($short).$handle_code."&url=".get_permalink()."' target='_blank'>Click To Tweet</a></p><hr />";
 		}
 
