@@ -1,10 +1,10 @@
 === Click To Tweet ===
-Contributors: todaymade
-Donate link: http://coschedule.com/click-to-tweet
+Contributors: CoSchedule
+Donate link: https://coschedule.com/click-to-tweet
 Tags: click to tweet, twitter, tweet, twitter plugin, Twitter boxes, share, social media, auto post
 Requires at least: 3.1
-Tested up to: 4.0.1
-Stable tag: 1.3
+Tested up to: 4.9.8
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ This plugin allows you to create beautiful Click To Tweet boxes anywhere in your
 
 This WordPress plugin allows you to easily create tweetable content for your readers. Use pullquotes and custom messages inside the body of your blog post to highlight your content for the reader and make it simple for them to share on Twitter.
 
-This is a plugin by CoSchedule, the [all-in-one content marketing editorial calendar for WordPress](http://coschedule.com).
+This is a plugin by CoSchedule, the [all-in-one content marketing editorial calendar for WordPress](https://coschedule.com).
 
 == Installation ==
 
@@ -50,6 +50,9 @@ Find out more here: [http://coschedule.com/click-to-tweet](http://coschedule.com
 
 == Changelog ==
 
+= 1.4 =
+* Improved support for twitter 280 character length
+
 = 1.3 =
 * Removed powered by link
 
@@ -63,6 +66,12 @@ Find out more here: [http://coschedule.com/click-to-tweet](http://coschedule.com
 * Initial Release
 
 == Upgrade Notice ==
+
+= 1.4 =
+* This update fixes the max length tweet to 280 characters
+
+= 1.3 =
+* This update removes the powered by link
 
 = 1.2 =
 * This update fixes support for php short tags
