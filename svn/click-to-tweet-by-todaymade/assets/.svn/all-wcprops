@@ -27,6 +27,18 @@ svn:wc:ra_dav:version-url
 V 70
 /!svn/ver/890633/click-to-tweet-by-todaymade/assets/banner-772x250.png
 END
+icon-128x128.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/1971786/click-to-tweet-by-todaymade/assets/icon-128x128.png
+END
+icon-256x256.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/!svn/ver/1971786/click-to-tweet-by-todaymade/assets/icon-256x256.png
+END
 screenshot-1.png
 K 25
 svn:wc:ra_dav:version-url
