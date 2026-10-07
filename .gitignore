@@ -1,2 +1,11 @@
 .svn
 svn/click-to-tweet-by-todaymade/tags/
+
+node_modules/
+.env
+.env.local
+.env.*.local
+coverage/
+*.log
+.DS_Store
+.playwright-mcp/
